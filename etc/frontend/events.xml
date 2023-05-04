@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="wishlist_add_product">
+        <observer name="devhub_fbeventtracker_add_to_wishlist" instance="DeveloperHub\FacebookEventTracker\Observer\WishlistAddProduct" />
+    </event>
+    <event name="sales_quote_product_add_after">
+        <observer name="devhub_add_to_cart" instance="DeveloperHub\FacebookEventTracker\Observer\AddToCart"/>
+    </event>
+    <event name="newsletter_subscriber_save_after">
+        <observer name="devhub_fbeventtracker_subcribe" instance="DeveloperHub\FacebookEventTracker\Observer\Subcribe" />
+    </event>
+    <event name="controller_action_predispatch_multishipping_checkout_index">
+        <observer name="devhub_fbeventtracker_initiate_checkout_multi" instance="DeveloperHub\FacebookEventTracker\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_checkout_onepage_index">
+        <observer name="devhub_fbeventtracker_initiate_checkout_onepage" instance="DeveloperHub\FacebookEventTracker\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="devhub_fbeventtracker_initiate_checkout_index_index" instance="DeveloperHub\FacebookEventTracker\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_catalogsearch_result_index">
+        <observer name="devhub_fbeventtracker_search_result_index" instance="DeveloperHub\FacebookEventTracker\Observer\Search" />
+    </event>
+    <event name="controller_action_predispatch_catalogsearch_advanced_result">
+        <observer name="devhub_fbeventtracker_search_advanced_result" instance="DeveloperHub\FacebookEventTracker\Observer\Search" />
+    </event>
+    <event name="customer_register_success">
+        <observer name="devhub_fbeventtracker_customer_register_success" instance="DeveloperHub\FacebookEventTracker\Observer\Register" />
+    </event>
+</config>

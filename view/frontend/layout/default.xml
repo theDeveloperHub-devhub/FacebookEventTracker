@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="after.body.start">
+            <block class="DeveloperHub\FacebookEventTracker\Block\Code"
+                   name="developer.hub.facebook.pixel."
+                   template="DeveloperHub_FacebookEventTracker::code.phtml"
+                   before="-"
+                   ifconfig="devhub_facebook_event_tracker/general/active" />
+            <block class="Magento\Framework\View\Element\Template" name="devhub.fbeventtracker.atc" after="devhub.facebook.event.tracker"
+                   ifconfig="devhub_facebook_event_tracker/general/active"
+                   template="DeveloperHub_FacebookEventTracker::atc.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="devhubFbEventTrackerAtc" xsi:type="array">
+                                <item name="component" xsi:type="string">DeveloperHub_FacebookEventTracker/js/atc</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="devhub.fbeventtracker.subscribe" after="devhub.facebook.event.tracker."
+                   ifconfig="devhub_facebook_event_tracker/general/active"
+                   template="DeveloperHub_FacebookEventTracker::subscribe.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="devhubFbEventTrackerSubscribe" xsi:type="array">
+                                <item name="component" xsi:type="string">DeveloperHub_FacebookEventTracker/js/subscribe</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

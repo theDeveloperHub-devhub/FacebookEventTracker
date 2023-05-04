@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <devhub_facebook_event_tracker>
+            <general>
+                <active>0</active>
+            </general>
+        </devhub_facebook_event_tracker>
+    </default>
+</config>
